@@ -1,16 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from "./logo.svg";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
 
-import { NavigationComponent } from './components/Navbar';
+import { NavigationComponent } from "./components/Navbar";
+import AppState from "./context/app/state";
+import CartState from "./context/cart/state";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <>
-    <NavigationComponent/>
-      <div className="clas">Yo!</div>
-    </>
+    <AppState>
+      <Router>
+        <CartState>
+          <NavigationComponent />
+          <Switch>
+            {/* <Route exact path="/" component={Home}></Route>
+        <Route exact path="/about" component={About}></Route> */}
+          </Switch>
+        </CartState>
+      </Router>
+    </AppState>
   );
-}
+};
 
 export default App;

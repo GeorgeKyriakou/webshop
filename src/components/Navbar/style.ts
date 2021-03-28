@@ -2,10 +2,29 @@ import styled, { css } from "styled-components";
 
 export const Navigation = styled.div`
   ${({ theme }) => css`
-    width: 100%;
     height: 10%;
     display:flex;
-    flex-direction:row;
+    padding: 10px;
+    position: relative;
+    
+    img {
+      cursor: pointer;
+    }
+
+    .preview-container {
+      top: 100%;
+      right: 10px;
+      position: absolute;
+    }
+    ul {
+      right: 10px;
+      display:flex;
+      list-style-type: none;
+      position: absolute;
+    }
+    li {
+      padding-left: 100px;
+    }
     } */
   `}
 `;
